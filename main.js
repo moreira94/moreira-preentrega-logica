@@ -5,9 +5,10 @@ const interesPocasCuotas = 20;
 const interesMediasCuotas = 50;
 const interesMuchasCuotas = 80;
 let cantProductos = parseInt(prompt("¿Cuantos productos deseas llevar?"));
-while (cantProductos== null || /\D/.test(cantProductos) || cantProductos == "") {
-    cantProductos = prompt ("Ingrese por favor EL NUMERO de productos que desea llevar")
+while (isNaN(cantProductos)) {
+    cantProductos = parseInt(prompt ("Ingrese por favor EL NUMERO de productos que desea llevar"))
 }
+
 let precioTotal = 0
 let precioConInteres = 0
 function precioPorMes(precioTotal, cantCuotas) {
@@ -49,6 +50,6 @@ if (cantProductos > 10) {
             break;
         default:
             alert("Tenemos un máximo de 12 cuotas")
-            
+
     }
 }
