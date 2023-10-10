@@ -94,23 +94,26 @@ const porEstado = () => {
 
 let queFiltro = prompt("Bienvenido al sistema de venta de electrodomésticos nuevos y usados. Por favor elija si quiere filtrar los productos por artefacto, por estado o por precio.").toUpperCase()
 
-while (queFiltro !== "ARTEFACTO" || queFiltro !== "PRECIO" || queFiltro !== "ESTADO" ){
-    let queFiltro = prompt("El sistema solo funciona si elije filtrar los productos por artefacto, por estado o por precio.").toUpperCase()
+let n = 0
 
+while (n == 0 ){
 
-    if (queFiltro === "ARTEFACTO") {
-        porArtefacto()
-    } else {
-        if (queFiltro === "PRECIO") {
-            menorQue()
-        } else {
-            if (queFiltro === "ESTADO") {
-                porEstado()
-            } else {
-                alert("Ingresaste un valor incorrecto, vamos de vuelta")
-            }
+    switch(queFiltro) {
+        case "ARTEFACTO":
+            porArtefacto();
+            n++
+            break;
+        case "ESTADO":
+            porEstado();
+            n++
+            break;
+        case "PRECIO":
+            menorQue();
+            n++
+            break;
+        default:
+            queFiltro = prompt("El sistema solo funciona si elije filtrar los productos por artefacto, por estado o por precio.").toUpperCase()
         }
-    }
 }
 
 alert("Gracias por utilizar nuestros servicios, no se olvide de pasar por la tienda para cerrar su pedido.")
