@@ -56,24 +56,17 @@
 
 // constructor, buscar producto en el array, filtrar por precio, artefacto o condicion, devolver producto en el console.
 
-function Producto(nombre, precio, estado) {
-    this.nombre = nombre
-    this.precio = precio
-    this.estado = estado
-}
 
-let producto1 = new Producto("Lavarropas Samsung", 600000, "Nuevo")
-let producto2 = new Producto("Lavavajillas Samsung", 800000, "Nuevo")
-let producto3 = new Producto("Lavarropas Drean", 180000, "Usado")
-let producto4 = new Producto("Lavarropas Electrolux", 900000, "Nuevo")
-let producto5 = new Producto("Lavavajillas Ariston", 420000, "Usado")
-let producto6 = new Producto("Lavarropas Ariston", 500000, "Nuevo")
-let producto7 = new Producto("Lavavajillas LG", 800000, "Nuevo")
-let producto8 = new Producto("Lavarrioas LG", 650000, "Nuevo")
-
-const productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8]
-
-
+const productos = [
+    {nombre: "Lavarropas Samsung", precio: 600000, estado: "Nuevo"},
+    {nombre: "Lavavajillas Samsung", precio: 800000, estado: "Nuevo"},
+    {nombre: "Lavarropas Drean", precio: 180000, estado: "Usado"},
+    {nombre: "Lavarropas Electrolux", precio: 900000, estado: "Nuevo"},
+    {nombre: "Lavavajillas Ariston", precio: 4200000, estado: "Usado"},
+    {nombre: "Lavarropas Ariston", precio: 500000, estado: "Nuevo"},
+    {nombre: "Lavavajillas LG", precio: 700000, estado: "Nuevo"},
+    {nombre: "Lavarrioas LG", precio: 620000, estado: "Nuevo"},
+]
 
 const menorQue = () => {
     let precioCliente = parseFloat(prompt("¿Hasta cuanto esta dispuesto a pagar?"))
@@ -82,7 +75,7 @@ const menorQue = () => {
 }
 const porArtefacto = () => {
     let filtroArtefacto = prompt("¿Que artefacto desea buscar? ¿Lavarropas o lavavajillas?").toUpperCase();
-    let filtro = productos.filter((producto) => producto.nombre.toUpperCase().includes(filtroArtefacto));
+    let filtro = productos.filter((producto) =>  producto.nombre.toUpperCase().includes(filtroArtefacto));
     console.log(filtro);
 }
 
@@ -117,5 +110,3 @@ while (n == 0 ){
 }
 
 alert("Gracias por utilizar nuestros servicios, no se olvide de pasar por la tienda para cerrar su pedido.")
-
-
